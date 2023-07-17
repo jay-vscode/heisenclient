@@ -1,0 +1,73 @@
+{
+	"name": "discord-bot-client",
+	"version": "2.4.0",
+	"DiscordBuildVersion": 204762,
+	"description": "Discord Bot Client - login into discord with a bot token",
+	"main": "./AppCore/index.js",
+	"dependencies": {
+		"axios": "1.1",
+		"discord-api-types": "^0.37.47",
+		"discord-protos": "^1.0.4",
+		"electron-log": "^4.4.8",
+		"electron-store": "^8.1.0",
+		"express": "^4.18.1",
+		"morgan": "^1.10.0",
+		"multer": "^1.4.5-lts.1",
+		"node-fetch": "^2.6.7",
+		"request": "^2.88.2",
+		"socket.io": "^4.6.2",
+		"ws": "^8.12.1"
+	},
+	"devDependencies": {
+		"electron": "^15.5.7",
+		"electron-builder": "^23.6.0"
+	},
+	"build": {
+		"appId": "DiscordBotClient",
+		"productName": "DiscordBotClient",
+		"artifactName": "${productName}-${os}-${arch}.${ext}",
+		"electronVersion": "15.5.7",
+		"copyright": "Copyright © 2023 Elysia#1782",
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"target": [
+				"dmg"
+			],
+			"icon": "./AppAssets/DiscordBotClient.png"
+		},
+		"linux": {
+			"target": [
+				"AppImage"
+			],
+			"icon": "./AppAssets/DiscordBotClient.png"
+		},
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64"
+					]
+				}
+			],
+			"icon": "./AppAssets/DiscordBotClient.png"
+		},
+		"asar": false
+	},
+	"scripts": {
+		"start": "electron AppCore\\index.js",
+		"mac": "electron-builder -m",
+		"win": "electron-builder -w",
+		"linux": "electron-builder -l",
+		"build": "electron-builder"
+	},
+	"author": {
+		"name": "aiko-chan-ai",
+		"email": "DiscordBotClient@aiko.com"
+	},
+	"repository": {
+		"url": "https://github.com/aiko-chan-ai/DiscordBotClient/"
+	},
+	"license": "ISC",
+	"productName": "Discord Bot Client"
+}
